@@ -1,0 +1,839 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "🔥Tha Bronx 2 Hub 🔫",
+   LoadingTitle = "🔫 Tha Bronx 2 💥",
+   LoadingSubtitle = "by Kyro",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Tha Bronx 2"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "ReTjg7YrcZ", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Key System",
+      Subtitle = "Key In Discord",
+      Note = "Key In Discord Server",
+      FileName = "Key 1", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Drew1"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("🏠 Home", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Fly/speed✈️")
+
+Rayfield:Notify({
+   Title = "Congrats u suck",
+   Content = "Cheater Hub",
+   Duration = 3,
+   Image = 13047715178,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Infinite Jump Toggle",
+   Callback = function()
+       --Toggles the infinite jump between on or off on every script run
+_G.infinjump = not _G.infinjump
+
+if _G.infinJumpStarted == nil then
+	--Ensures this only runs once to save resources
+	_G.infinJumpStarted = true
+	
+	--Notifies readiness
+	game.StarterGui:SetCore("SendNotification", {Title="Youtube Hub"; Text="Infinite Jump Activated!"; Duration=5;})
+
+	--The actual infinite jump
+	local plr = game:GetService('Players').LocalPlayer
+	local m = plr:GetMouse()
+	m.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+			humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+			humanoid:ChangeState('Jumping')
+			wait()
+			humanoid:ChangeState('Seated')
+			end
+		end
+	end)
+end
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "WalkSpeed Slider",
+   Range = {1, 350},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+
+local OtherSection = MainTab:CreateSection("Cheats👽")
+
+
+local TPTab = Window:CreateTab("🏝 Teleports", nil) -- Title, Image
+
+local Button1 = TPTab:CreateButton({
+   Name = "Penthouse🌇",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1595.4559326171875, 419.32080078125, -267.4992370605469)   --Teleport1
+   end,
+})
+
+local Button2 = TPTab:CreateButton({
+   Name = "Money Cleaning💸",
+   Callback = function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972.0980224609375, 253.6837921142578, -693.1256713867188)   --Teleport2
+   end,
+})
+
+local Button3 = TPTab:CreateButton({
+   Name = "Bank🏦",
+   Callback = function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264.1893615722656, 283.63287353515625, -1203.766845703125)   --Teleport3
+   end,
+})
+
+local Button4 = TPTab:CreateButton({
+   Name = "Dealership🚘",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-519.3651123046875, 253.9544677734375, -1239.3883056640625) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button5 = TPTab:CreateButton({
+   Name = "Sell💶",
+   Callback = function()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(81058.0546875, 133133.015625, 168.46661376953125)-- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TPTab:CreateButton({
+   Name = "Rice🍙",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36887.8515625, 14073.4951171875, 5843.19384765625)  -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TPTab:CreateButton({
+   Name = "Gun Shop1🔫",
+   Callback = function()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(92985.9140625, 122097.9609375, 17007.9609375)-- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TPTab:CreateButton({
+   Name = "Back Gas⛽",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1620.1995849609375, 253.1730194091797, -1218.3382568359375) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TPTab:CreateButton({
+   Name = "Drip👕",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(67459.53125, 10489.0390625, 544.3062744140625) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TPTab:CreateButton({
+   Name = "Exotic Dealer🤑",
+   Callback = function()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-827.3505859375, 253.111328125, -972.15869140625)-- The function that takes place when the button is pressed
+   end,
+})
+
+
+local Button = TPTab:CreateButton({
+   Name = "Exotic Gun🔫",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(60817.8515625, 87609.15625, -351.8342590332031) -- The function that takes place when the button is pressed
+   end,
+})
+
+local MiscTab = Window:CreateTab("🎲 Lobby", nil) -- Title, Image
+
+-- Create Input for Roblox Username
+local UsernameInput = MiscTab:CreateInput({
+    Name = "Enter Username",
+    PlaceholderText = "Type the player's username",
+    RemoveTextAfterFocusLost = true,
+    Callback = function(Text)
+        _G.targetUsername = Text -- Store the username in a global variable
+    end,
+})
+
+-- Create Teleport Button
+local TeleportButton = MiscTab:CreateButton({
+    Name = "Teleport to Player",
+    Callback = function()
+        local playerToTeleport = game.Players:FindFirstChild(_G.targetUsername)
+        if playerToTeleport and playerToTeleport.Character and playerToTeleport.Character:FindFirstChild("HumanoidRootPart") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = playerToTeleport.Character.HumanoidRootPart.CFrame
+        else
+            Rayfield:Notify({
+                Title = "Error",
+                Content = "Player not found or not in the game.",
+                Duration = 5,
+                Image = 13047715178,
+            })
+        end
+    end,
+})
+
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local LocalPlayer = Players.LocalPlayer
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local Humanoid = Character:WaitForChild("Humanoid")
+local Flying = false
+local FlySpeed = 50 -- Adjust the speed here
+
+local function fly()
+    local bodyVelocity = Instance.new("BodyVelocity")
+    bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+    bodyVelocity.MaxForce = Vector3.new(4000, 4000, 4000)
+    bodyVelocity.Parent = Character:WaitForChild("HumanoidRootPart")
+
+    while Flying do
+        bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+        if UserInputService:IsKeyDown(Enum.KeyCode.W) then
+            bodyVelocity.Velocity = bodyVelocity.Velocity + (Character.HumanoidRootPart.CFrame.LookVector * FlySpeed)
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.S) then
+            bodyVelocity.Velocity = bodyVelocity.Velocity - (Character.HumanoidRootPart.CFrame.LookVector * FlySpeed)
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.A) then
+            bodyVelocity.Velocity = bodyVelocity.Velocity - (Character.HumanoidRootPart.CFrame.RightVector * FlySpeed)
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.D) then
+            bodyVelocity.Velocity = bodyVelocity.Velocity + (Character.HumanoidRootPart.CFrame.RightVector * FlySpeed)
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.Space) then
+            bodyVelocity.Velocity = bodyVelocity.Velocity + Vector3.new(0, FlySpeed, 0)
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then
+            bodyVelocity.Velocity = bodyVelocity.Velocity - Vector3.new(0, FlySpeed, 0)
+        end
+        wait(0.1)
+    end
+
+    bodyVelocity:Destroy()
+end
+
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.F then
+        Flying = not Flying
+        if Flying then
+            fly()
+        end
+    end
+end)
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local ESPColor = Color3.fromRGB(255, 0, 0) -- Red color for ESP
+local ESPInstances = {}
+
+-- Function to create ESP for a player
+local function createESP(player)
+    if player ~= LocalPlayer and player.Character then
+        local highlight = Instance.new("Highlight")
+        highlight.FillColor = ESPColor
+        highlight.FillTransparency = 0.5
+        highlight.Adornee = player.Character
+        highlight.Parent = player.Character
+        
+        -- Store highlight instance
+        ESPInstances[player.UserId] = highlight
+    end
+end
+
+-- Function to remove ESP for a player
+local function removeESP(player)
+    local highlight = ESPInstances[player.UserId]
+    if highlight then
+        highlight:Destroy()
+        ESPInstances[player.UserId] = nil
+    end
+end
+
+-- Function to toggle ESP
+local function toggleESP(value)
+    if value then
+        for _, player in ipairs(Players:GetPlayers()) do
+            createESP(player)
+        end
+    else
+        for _, player in ipairs(Players:GetPlayers()) do
+            removeESP(player)
+        end
+    end
+end
+
+-- Connect player added events
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        if ESPEnabled then
+            createESP(player)
+        end
+    end)
+end)
+
+-- Connect player removing events
+Players.PlayerRemoving:Connect(function(player)
+    removeESP(player)
+end)
+
+-- Toggle Button
+local ESPEnabled = false -- Track ESP status
+local Toggle = MainTab:CreateToggle({
+    Name = "ESP",
+    CurrentValue = false,
+    Flag = "ToggleESP",
+    Callback = function(value)
+        ESPEnabled = value
+        toggleESP(value)
+    end,
+})
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local noClipEnabled = false
+
+local function toggleNoClip()
+    noClipEnabled = not noClipEnabled
+    
+    if noClipEnabled then
+        -- Enable No Clip
+        for _, part in ipairs(Character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+            end
+        end
+    else
+        -- Disable No Clip
+        for _, part in ipairs(Character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = true
+            end
+        end
+    end
+end
+
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.N then
+        toggleNoClip() -- Press "N" to toggle No Clip
+    end
+end)
+
+RunService.Heartbeat:Connect(function()
+    if noClipEnabled then
+        Character:TranslateBy(Vector3.new(0, 0, 0)) -- Keeps the character from being affected by gravity
+    end
+end)
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local playerGuis = {}
+
+local function createHealthGui(player)
+    local character = player.Character or player.CharacterAdded:Wait()
+    local head = character:WaitForChild("Head")
+
+    -- Create a BillboardGui
+    local billboardGui = Instance.new("BillboardGui")
+    billboardGui.Size = UDim2.new(0, 200, 0, 50)
+    billboardGui.StudsOffset = Vector3.new(0, 3, 0)
+    billboardGui.Adornee = head
+    billboardGui.Parent = head
+
+    -- Create a Frame for health
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(1, 0, 0.5, 0)
+    frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    frame.Parent = billboardGui
+
+    -- Create a TextLabel for player's name
+    local nameLabel = Instance.new("TextLabel")
+    nameLabel.Size = UDim2.new(1, 0, 0.5, 0)
+    nameLabel.BackgroundTransparency = 1
+    nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    nameLabel.TextScaled = true
+    nameLabel.Text = player.Name
+    nameLabel.Parent = billboardGui
+
+    -- Update health display
+    local healthLabel = Instance.new("TextLabel")
+    healthLabel.Size = UDim2.new(1, 0, 0.5, 0)
+    healthLabel.BackgroundTransparency = 1
+    healthLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    healthLabel.TextScaled = true
+    healthLabel.Position = UDim2.new(0, 0, 0.5, 0)
+    healthLabel.Parent = billboardGui
+
+    local function updateHealth()
+        local health = character:FindFirstChild("Humanoid") and character.Humanoid.Health or 0
+        local maxHealth = character:FindFirstChild("Humanoid") and character.Humanoid.MaxHealth or 0
+        frame.Size = UDim2.new(health / maxHealth, 0, 0.5, 0)
+        healthLabel.Text = "Health: " .. health .. "/" .. maxHealth
+    end
+
+    -- Connect health update to RenderStepped
+    local connection
+    connection = RunService.RenderStepped:Connect(function()
+        if character and character:FindFirstChild("Humanoid") then
+            updateHealth()
+        else
+            connection:Disconnect()
+        end
+    end)
+
+    -- Store the GUI for cleanup
+    playerGuis[player.UserId] = billboardGui
+end
+
+local function removeHealthGui(player)
+    if playerGuis[player.UserId] then
+        playerGuis[player.UserId]:Destroy()
+        playerGuis[player.UserId] = nil
+    end
+end
+
+-- Toggle function
+local function togglePlayerData(value)
+    if value then
+        -- Create GUI for existing players
+        for _, player in ipairs(Players:GetPlayers()) do
+            if player.Character then
+                createHealthGui(player)
+            end
+        end
+
+        -- Create GUI for players that join
+        Players.PlayerAdded:Connect(function(player)
+            player.CharacterAdded:Connect(function()
+                createHealthGui(player)
+            end)
+        end)
+
+        -- Create GUI for character added events
+        for _, player in ipairs(Players:GetPlayers()) do
+            player.CharacterAdded:Connect(function()
+                createHealthGui(player)
+            end)
+        end
+    else
+        -- Remove GUI for all players
+        for _, player in ipairs(Players:GetPlayers()) do
+            removeHealthGui(player)
+        end
+    end
+end
+
+-- Create the toggle button
+local Toggle = MainTab:CreateToggle({
+    Name = "Player Data",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(Value)
+        togglePlayerData(Value)
+    end,
+})
+
+local Button = TPTab:CreateButton({
+   Name = "C4💣",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-557.2083740234375, 325.64306640625, -574.0216064453125) -- The function that takes place when the button is pressed
+   end,
+})
+
+local RiceTab = Window:CreateTab("Rice Pots🍙", nil) -- Title, Image
+
+local Button1 = RiceTab:CreateButton({
+   Name = "Pot#1",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36865.36328125, 14073.4951171875, 5848.998046875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button2 = RiceTab:CreateButton({
+   Name = "Pot#2",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36865.43359375, 14073.4951171875, 5846.5732421875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button3 = RiceTab:CreateButton({
+   Name = "Pot#3",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36865.43359375, 14073.4951171875, 5846.5732421875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button4 = RiceTab:CreateButton({
+   Name = "Pot#4",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36865.26953125, 14073.4951171875, 5832.607421875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button5 = RiceTab:CreateButton({
+   Name = "Pot#5",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36865.39453125, 14073.4951171875, 5822.90966796875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button6 = RiceTab:CreateButton({
+   Name = "Pot#6",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36865.08203125, 14073.4951171875, 5820.41845703125) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button7 = RiceTab:CreateButton({
+   Name = "Pot#7",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36849.67578125, 14073.4951171875, 5820.4853515625) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button8 = RiceTab:CreateButton({
+   Name = "Pot#8",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36849.796875, 14073.4951171875, 5822.4169921875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button9 = RiceTab:CreateButton({
+   Name = "Pot#9",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36849.921875, 14073.49609375, 5832.78759765625) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button10 = RiceTab:CreateButton({
+   Name = "Pot#10",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36849.15625, 14073.49609375, 5842.53369140625) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button11 = RiceTab:CreateButton({
+   Name = "Pot#11",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36849.10546875, 14073.49609375, 5846.47216796875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button12 = RiceTab:CreateButton({
+   Name = "Pot#12",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36848.98828125, 14073.49609375, 5848.5810546875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button13 = RiceTab:CreateButton({
+   Name = "Pot#13",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36835.76171875, 14073.4951171875, 5847.73779296875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button14 = RiceTab:CreateButton({
+   Name = "Pot#14",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36835.35546875, 14073.4951171875, 5841.6533203125) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button15 = RiceTab:CreateButton({
+   Name = "Pot#15",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36835.46875, 14073.494140625, 5831.703125) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button16 = RiceTab:CreateButton({
+   Name = "Pot#16",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36834.78515625, 14073.494140625, 5821.99609375) -- The function that takes place when the button is pressed
+   end,
+})
+
+
+-- Create Input for Roblox Username
+local UsernameInput = MiscTab:CreateInput({
+    Name = "Enter Username",
+    PlaceholderText = "Type the player's username",
+    RemoveTextAfterFocusLost = true,
+    Callback = function(Text)
+        _G.targetUsername = Text -- Store the username in a global variable
+    end,
+})
+
+local Players = game:GetService("Players")
+local Camera = workspace.CurrentCamera
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local spectatePlayer = nil
+local isSpectating = false
+
+local function toggleSpectate(player)
+    if player then
+        Camera.CameraType = Enum.CameraType.Scriptable
+        spectatePlayer = player
+        isSpectating = true
+    else
+        Camera.CameraType = Enum.CameraType.Custom
+        spectatePlayer = nil
+        isSpectating = false
+    end
+end
+
+local function updateCamera()
+    if spectatePlayer and spectatePlayer.Character then
+        local character = spectatePlayer.Character
+        local head = character:FindFirstChild("Head")
+
+        if head and character:FindFirstChild("HumanoidRootPart") then
+            -- Set camera position behind the player's head
+            Camera.CFrame = CFrame.new(head.Position + Vector3.new(0, 1.5, -5), head.Position)
+        end
+    end
+end
+
+RunService.RenderStepped:Connect(updateCamera)
+
+-- Mouse movement handling for looking around
+UserInputService.InputChanged:Connect(function(input)
+    if isSpectating and input.UserInputType == Enum.UserInputType.MouseMovement and UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+        local delta = Vector2.new(input.Delta.x, input.Delta.y)
+        local head = spectatePlayer.Character:FindFirstChild("Head")
+        if head then
+            -- Rotate the camera based on mouse movement
+            local cameraDirection = Camera.CFrame.LookVector
+            local newDirection = CFrame.Angles(-math.rad(delta.y * 0.1), -math.rad(delta.x * 0.1), 0) * CFrame.new(cameraDirection)
+            Camera.CFrame = CFrame.new(head.Position + Vector3.new(0, 1.5, -5)) * newDirection
+        end
+    end
+end)
+
+-- Create Spectate Toggle
+local SpectateToggle = MiscTab:CreateToggle({
+    Name = "Toggle Spectate Player",
+    CurrentValue = false,
+    Callback = function(value)
+        if value then
+            if not _G.targetUsername or _G.targetUsername == "" then
+                Rayfield:Notify({
+                    Title = "Error",
+                    Content = "Please enter a valid username.",
+                    Duration = 5,
+                    Image = 13047715178,
+                })
+                SpectateToggle:SetValue(false) -- Reset toggle
+                return
+            end
+
+            local targetPlayer = Players:FindFirstChild(_G.targetUsername)
+            if targetPlayer and targetPlayer ~= Players.LocalPlayer then
+                toggleSpectate(targetPlayer)
+            else
+                Rayfield:Notify({
+                    Title = "Error",
+                    Content = "Player not found or you cannot spectate yourself.",
+                    Duration = 5,
+                    Image = 13047715178,
+                })
+                SpectateToggle:SetValue(false) -- Reset toggle
+            end
+        else
+            toggleSpectate(nil) -- Stop spectating when toggle is turned off
+        end
+    end,
+})
+
+local Button17 = RiceTab:CreateButton({
+   Name = "Crip Pots",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-686.9888305664062, 257.66510009765625, -1028.44091796875) -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "cords",
+   Callback = function()
+   local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local copy = Instance.new("TextButton")
+local pos = Instance.new("TextBox")
+local find = Instance.new("TextButton")
+
+-- Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.639646292, 0, 0.399008662, 0)
+Frame.Size = UDim2.new(0, 387, 0, 206)
+Frame.Active = true
+
+title.Name = "title"
+title.Parent = Frame
+title.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+title.BorderSizePixel = 0
+title.Size = UDim2.new(0, 387, 0, 50)
+title.Font = Enum.Font.GothamBold
+title.Text = "Position Finder"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 30.000
+title.TextWrapped = true
+
+copy.Name = "copy"
+copy.Parent = Frame
+copy.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+copy.BorderSizePixel = 0
+copy.Position = UDim2.new(0.527131796, 0, 0.635922313, 0)
+copy.Size = UDim2.new(0, 148, 0, 50)
+copy.Font = Enum.Font.GothamSemibold
+copy.Text = "Copy"
+copy.TextColor3 = Color3.fromRGB(255, 255, 255)
+copy.TextSize = 20.000
+
+pos.Name = "pos"
+pos.Parent = Frame
+pos.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+pos.BorderSizePixel = 0
+pos.Position = UDim2.new(0.0904392749, 0, 0.305825233, 0)
+pos.Size = UDim2.new(0, 317, 0, 50)
+pos.Font = Enum.Font.GothamSemibold
+pos.Text = ""
+pos.TextColor3 = Color3.fromRGB(255, 255, 255)
+pos.TextSize = 14.000
+pos.TextWrapped = true
+
+find.Name = "find"
+find.Parent = Frame
+find.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+find.BorderSizePixel = 0
+find.Position = UDim2.new(0.0904392898, 0, 0.635922313, 0)
+find.Size = UDim2.new(0, 148, 0, 50)
+find.Font = Enum.Font.GothamSemibold
+find.Text = "Find"
+find.TextColor3 = Color3.fromRGB(255, 255, 255)
+find.TextSize = 20.000
+
+-- Toggle functionality
+local isVisible = true
+
+local UIS = game:GetService("UserInputService")
+UIS.InputBegan:Connect(function(input, gameProcessedEvent)
+    if not gameProcessedEvent then
+        if input.KeyCode == Enum.KeyCode.LeftBracket then  -- Toggle with '['
+            isVisible = not isVisible
+            Frame.Visible = isVisible
+        end
+    end
+end)
+
+-- Scripts:
+
+local function UMTQ_fake_script() -- copy.LocalScript 
+    local script = Instance.new('LocalScript', copy)
+
+    script.Parent.MouseButton1Click:Connect(function()
+        setclipboard(script.Parent.Parent.pos.Text)
+    end)
+end
+coroutine.wrap(UMTQ_fake_script)()
+
+local function KJAYG_fake_script() -- Frame.Dragify 
+    local script = Instance.new('LocalScript', Frame)
+
+    local UIS = game:GetService("UserInputService")
+    function dragify(Frame)
+        local dragToggle = nil
+        local dragSpeed = 0
+        local dragInput = nil
+        local dragStart = nil
+        local dragPos = nil
+        function updateInput(input)
+            local Delta = input.Position - dragStart
+            local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+            game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
+        end
+        Frame.InputBegan:Connect(function(input)
+            if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+                dragToggle = true
+                dragStart = input.Position
+                startPos = Frame.Position
+                input.Changed:Connect(function()
+                    if input.UserInputState == Enum.UserInputState.End then
+                        dragToggle = false
+                    end
+                end)
+            end
+        end)
+        Frame.InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                dragInput = input
+            end
+        end)
+        game:GetService("UserInputService").InputChanged:Connect(function(input)
+            if input == dragInput and dragToggle then
+                updateInput(input)
+            end
+        end)
+    end
+
+    dragify(script.Parent)
+end
+coroutine.wrap(KJAYG_fake_script)()
+
+local function EKBNYI_fake_script() -- find.LocalScript 
+    local script = Instance.new('LocalScript', find)
+
+    script.Parent.MouseButton1Down:Connect(function()
+        script.Parent.Parent.pos.Text = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+    end)
+end
+coroutine.wrap(EKBNYI_fake_script)()
+-- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = TPTab:CreateButton({
+   Name = "OnTheRadar🐼",
+   Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(93424.8359375, 14484.72265625, 561.20751953125) -- The function that takes place when the button is pressed
+   end,
+})
